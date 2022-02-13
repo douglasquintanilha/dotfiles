@@ -68,9 +68,6 @@ alias tf='terraform'
 # sh
 alias chmox='chmod +x $1'
 
-# aws
-alias aws-mfa='aws-mfa --duration 129600'
-
 # git
 alias g='git'
 alias gp='git pull'
