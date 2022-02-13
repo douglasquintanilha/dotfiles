@@ -2,6 +2,9 @@
 ## ALIASES ##
 #############
 
+# dotfiles
+alias dotfiles='$EDITOR ~/dotfiles'
+
 # vim
 alias vim='nvim'
 
