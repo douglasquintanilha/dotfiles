@@ -43,6 +43,10 @@ alias yaml='bat --theme TwoDark -p -l yaml'
 
 # curlie
 alias curl='curlie'
+alias rcurl='curl'
+
+# my-ip
+alias myip='curl https://ifconfig.me/ 2> /dev/null'
 
 # dog
 alias dig='dog'
