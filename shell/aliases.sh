@@ -46,14 +46,12 @@ alias yaml='bat --theme TwoDark -p -l yaml'
 
 # curlie
 alias curl='curlie'
-alias rcurl='curl'
 
 # my-ip
 alias myip='curl https://ifconfig.me/ 2> /dev/null'
 
 # dog
 alias dig='dog'
-alias rdig='dig'
 
 # lsd
 alias ls='lsd -lah'
@@ -61,6 +59,9 @@ alias ls='lsd -lah'
 # duf
 unalias duf
 alias df='duf'
+
+# dust
+alias du='dust -d 1 -bi'
 
 #terraform
 alias tf='terraform'

@@ -11,3 +11,24 @@ function aws-envs() {
   AWS_ENVS=$(aws2-wrap --profile "$1" --export)
   eval "${AWS_ENVS}"
 }
+
+# real curl
+function rcurl(){
+    /usr/bin/curl $@
+}
+
+# real dig
+function rdig(){
+    /usr/bin/dig $@
+}
+
+# real df
+function rdf(){
+    /usr/bin/df $@
+}
+
+
+# real du
+function rdu(){
+    /usr/bin/du $@
+}

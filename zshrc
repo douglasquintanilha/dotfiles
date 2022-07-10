@@ -54,7 +54,7 @@ source /usr/share/nvm/install-nvm-exec
 
 # Uncomment the following line to disable auto-setting terminal title.
 # DISABLE_AUTO_TITLE="true"
-
+. /opt/asdf-vm/asdf.sh
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
 
@@ -137,9 +137,15 @@ source ~/.shell/functions.sh
 # configures fuck command
 eval $(thefuck --alias) 
 
+# configures asdf
+. /opt/asdf-vm/asdf.sh
+
 export ZSH_HISTORY_PROJ="$HOME/projects/zsh-history"
 export ZSH_HISTORY_FILE_ENC="${ZSH_HISTORY_PROJ}/${ZSH_HISTORY_FILE_ENC_NAME}"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/bin/vault vault
