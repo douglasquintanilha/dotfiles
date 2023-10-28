@@ -100,3 +100,6 @@ alias clean="yq eval 'del(.metadata.resourceVersion, .metadata.uid, .metadata.an
 
 # zsh
 alias zshrc="code ~/.zshrc"
+
+# watch
+alias watch="watch "
