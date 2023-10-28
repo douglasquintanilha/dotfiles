@@ -6,8 +6,11 @@
 CURRENT_SESSION=$(tmux display-message -p '#S')
 
 KUBE_TEXT=""
+KUBE_NAMESPACE=""
 if command -v kubectl &> /dev/null; then
   KUBE_CONTEXT=$(kubectl config current-context)
+  KUBE_NAMESPACE=$(kubectl config view --minify -o jsonpath='{..namespace}')
+  KUBE_NAMESPACE_COLOR="colour243"
   #Default non-prod colors
   KUBE_COLOR="colour33"
   KUBE_FOREGROUND="colour15"
@@ -17,7 +20,7 @@ if command -v kubectl &> /dev/null; then
     KUBE_FOREGROUND="colour15"
   fi
   if [ -n "$KUBE_CONTEXT" ]; then
-    KUBE_TEXT="#[default]#[fg=$KUBE_FOREGROUND, bg=$KUBE_COLOR] $KUBE_CONTEXT #[default]#[fg=$KUBE_COLOR, bg=default]"
+    KUBE_TEXT="#[default]#[fg=$KUBE_FOREGROUND, bg=$KUBE_COLOR] $KUBE_CONTEXT #[default]#[fg=$KUBE_COLOR, bg=$KUBE_NAMESPACE_COLOR]#[default]#[fg=$KUBE_FOREGROUND, bg=$KUBE_NAMESPACE_COLOR] $KUBE_NAMESPACE #[default]#[fg=$KUBE_NAMESPACE_COLOR, bg=default]"
   fi
 fi
 
